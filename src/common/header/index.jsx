@@ -1,11 +1,9 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 //引入第三方包，实现css动画
 import { CSSTransition } from 'react-transition-group'
 import { HeaderWrapper , Logo, Nav, NavItem, NavSearch,Addition,Button,SearchWrapper} from './style'
-export default class Header  extends Component {
-    state={
-        focus:false //定义文本框聚焦状态  
-    }
+class Header  extends Component {
     // 搜索框获得焦点
     SearchFocus=()=>{
         this.setState({
@@ -19,7 +17,7 @@ export default class Header  extends Component {
         })
     }
     render() {
-        let {focus}=this.state;
+        let {focus}=this.props;
         let {SearchFocus,SearchBlur}=this;
         return (
             <HeaderWrapper>
@@ -51,3 +49,14 @@ export default class Header  extends Component {
         )
     }
 }
+const mapStateToProps=(state,ownProps)=>{
+    return {
+        focus:state.focus
+    }
+}
+const mapDispatchToProps=(dispatch,ownProps)=>{
+    return {
+
+    }
+}
+export default connect(mapStateToProps ,mapDispatchToProps)(Header)
