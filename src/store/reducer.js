@@ -1,7 +1,6 @@
-const defaultState={
-    focus:false //定义文本框聚焦状态  
-};
+import { combineReducers } from 'redux-immutable'
+import headerReducer from '../common/header/store/reducer'
 
-export default (state=defaultState,action)=>{
-    return state;
-}
+export default combineReducers({
+    header:headerReducer
+})
