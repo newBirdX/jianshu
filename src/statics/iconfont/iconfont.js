@@ -29,4 +29,7 @@ export const Iconf=createGlobalStyle`
 .icon-fangdajing:before {
   content: "\e610";
 }
+.icon-spin:before {
+  content: "\e851";
+}
 `

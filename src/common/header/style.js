@@ -1,11 +1,13 @@
 import styled from 'styled-components'
 import logoPic from '../../statics/logo.png'
+//整个头部标签
 export const HeaderWrapper=styled.div`
   height:56px;
   background:#fff;
   border-bottom:1px solid #f0f0f0;
   position:relative;
 `
+//logo
 export const Logo=styled.a`
   display:block;
   width:100px;
@@ -14,6 +16,7 @@ export const Logo=styled.a`
   background:url(${logoPic});
   background-size: contain;
 `
+//导航部分
 export const Nav=styled.div`
   width:960px;
   height:100%;
@@ -21,6 +24,7 @@ export const Nav=styled.div`
   padding-right:20px;
   box-sizing:border-box;
 `
+//导航项
 export const NavItem=styled.div`
   line-height:56px;
   padding:0 15px;
@@ -36,6 +40,7 @@ export const NavItem=styled.div`
       color:#ea6f5a;
   }
 `
+//搜索框
 export const NavSearch=styled.input`
   width:160px;
   height:38px;
@@ -67,6 +72,7 @@ export const NavSearch=styled.input`
     width:160px;
   }
 `
+//搜索按钮
 export const SearchInfo=styled.div`
   position:absolute;
   top:54px;
@@ -85,12 +91,22 @@ export const SearchInfoTitle=styled.div`
 export const SearchInfoSwitch=styled.span`
   float:right;
   font-size:12px;
+  cursor:pointer;
+  .spin{
+    display:inline-block;
+    font-size:12px;
+    margin-right:2px;
+    transition: all .4s ease-in;
+    transform:rotate(0deg);
+    transform-origin:center,center;
+  }
 `
 export const SearchInfoList=styled.div`
   overflow:hidden;
 `
 export const SearchInfoItem=styled.a`
   display:block;
+  cursor:pointer;
   float:left;
   margin-right:10px;
   margin-bottom:10px;
@@ -128,7 +144,7 @@ export const SearchWrapper=styled.div`
   background:#fff;
   float:left;
   position:relative;
-  .iconfont{
+  .zoom{
     background:#eee;
     position:absolute;
     right:5px;
