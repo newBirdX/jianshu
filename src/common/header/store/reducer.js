@@ -17,8 +17,8 @@ export default (state=defaultState,action)=>{
             return state.set("focus",false);
         case constance.change_List:
             return state.merge({
-                List:action.data,
-                totalPage:action.totalPage
+                List:fromJS(action.data),
+                totalPage:fromJS(action.totalPage)
             })
         case constance.mouseIn:
             return state.set("mouseIn",true);

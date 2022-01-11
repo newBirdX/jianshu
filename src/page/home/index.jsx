@@ -1,11 +1,13 @@
 import React, { Component } from 'react'
+import {connect} from 'react-redux'
 import { HomeWrapper ,HomeLift,HomeRight} from './style'
 import Img1 from '../../statics/images/img1.jpg'
 import List from './components/List'
 import Recomend from './components/Recomend'
 import Topic  from './components/Topic'
 import Writter from './components/Writter'
-export default class Home extends Component {
+import {actionCreater} from './store'
+class Home extends Component {
     render() {
         return (
             <HomeWrapper>
@@ -21,4 +23,17 @@ export default class Home extends Component {
             </HomeWrapper>
         )
     }
+    componentDidMount(){
+        let {changeHomeData}=this.props;
+        changeHomeData();
+    }
 }
+const mapDispatchToProps=(dispatch)=>{
+    return {
+        changeHomeData(){
+            const action=actionCreater.getHomeInfo();
+            dispatch(action);
+        }
+    }
+}
+export default connect(null,mapDispatchToProps)(Home)

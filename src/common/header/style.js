@@ -72,15 +72,17 @@ export const NavSearch=styled.input`
     width:160px;
   }
 `
-//搜索按钮
+//推荐栏
 export const SearchInfo=styled.div`
   position:absolute;
   top:54px;
   left:0px;
   width:240px;
   padding:0 20px;
+  background:#fff;
   box-shadow:0 0 8px rgba(0,0,0, .2);
 `
+//推荐栏标题
 export const SearchInfoTitle=styled.div`
   margin-top:20px;
   margin-bottom:15px;
@@ -88,6 +90,7 @@ export const SearchInfoTitle=styled.div`
   font-size:14px;
   color:#969696;
 `
+//换一换按钮
 export const SearchInfoSwitch=styled.span`
   float:right;
   font-size:12px;
@@ -101,9 +104,11 @@ export const SearchInfoSwitch=styled.span`
     transform-origin:center,center;
   }
 `
+//包裹推荐单个项的div
 export const SearchInfoList=styled.div`
   overflow:hidden;
 `
+//推荐栏单个项
 export const SearchInfoItem=styled.a`
   display:block;
   cursor:pointer;
@@ -117,12 +122,14 @@ export const SearchInfoItem=styled.a`
   border-radius:3px;
   font-size:12px;
 `
+//放按钮的div
 export const Addition=styled.div`
   position:absolute;
   top:0;
   right:0;
   height:56px;
 `
+//写文章按钮
 export const Button=styled.div`
   float:right;
   margin-top:9px;

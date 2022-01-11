@@ -1,4 +1,8 @@
 import styled from "styled-components";
+import img1 from './images/22.png'
+import img2 from './images/33.png'
+import img3 from './images/44.png'
+import img4 from './images/55.png'
 //主体包裹div
 export const HomeWrapper=styled.div`
   overflow:hidden;
@@ -20,14 +24,14 @@ export const HomeLift=styled.div`
 // 右边栏div
 export const HomeRight=styled.div`
   float:right;
-  width:240px;
-  background:#0f0;
+  width:280px;
 `
 //热门专题部分
 export const TopicWrapper=styled.div`
   padding:20px 0 10px 0;
   overflow:hidden;
   margin-left:-18px;
+  border-bottom:1px solid #dcdcdc;
 `
 //热门专题单独项
 export const TopicItem=styled.div` 
@@ -49,4 +53,68 @@ export const TopicItem=styled.div`
     height:32px;
     margin-right:10px;
   }
+`
+//列表项
+export const ListItem=styled.div`
+  padding:20px 0;
+  overflow:hidden;
+  border-bottom :1px solid #dcdcdc;
+  .pic{
+    display:block;
+    width:125px;
+    height:100px;
+    float:right;
+    border-radius:10px;
+  }
+`
+//列表内容及标题
+export const ListInfo=styled.div`
+  width:500px;
+  float:left;
+  .title{
+    font-size:18px;
+    line-height:27px;
+    font-weight:bold;
+    color:#333;
+  }
+  .desc{
+    font-size:13px;
+    line-height:24px;
+    color:#999;
+  }
+`
+//右边栏的推荐外div
+export const RecomendWrapper=styled.div`
+  margin:30px 0;
+  width:280px;
+`
+export const RecomendItem=styled.a`
+  width:280px;
+  height:50px;
+  display:block;
+  background-size:contain;
+  &.it1{
+    background:url(${img1});
+    background-size:contain;
+  }
+  &.it2{
+    background:url(${img2});
+    background-size:contain;
+  }
+  &.it3{
+    background:url(${img3});
+    background-size:contain;
+  }
+  &.it4{
+    background:url(${img4});
+    background-size:contain;
+  }
+`
+export const WritterWrapper=styled.div`
+  width:278px;
+  height:300px;
+  line-height:300px;
+  border:1px solid #dcdcdc;
+  border-radius:3px;
+  text-align:center;
 `
