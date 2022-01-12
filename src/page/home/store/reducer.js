@@ -3,7 +3,8 @@ import {constance} from './index'
 const defaultState=fromJS({
     topicList:[],//推荐栏单独项
     articalList:[], //每条单独的list
-    articalPage:0  //list的默认页码
+    articalPage:0,  //list的默认页码
+    showScroll:false  //是否显示回到顶部
 })
 export default (state = defaultState, action) => {
     switch (action.type) {
@@ -17,6 +18,8 @@ export default (state = defaultState, action) => {
                 articalList:state.get("articalList").concat(action.articalList),
                 articalPage:action.nextPage
             })
+        case constance.changeShowScroll:
+            return state.set("showScroll",action.flag)
         default:
             return state
     }

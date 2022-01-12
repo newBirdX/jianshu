@@ -8,8 +8,7 @@ export const HeaderWrapper=styled.div`
   position:relative;
 `
 //logo
-export const Logo=styled.a`
-  display:block;
+export const Logo=styled.div`
   width:100px;
   height:56px;
   position:absolute;

@@ -2,11 +2,11 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 //引入第三方包，实现css动画
 import { CSSTransition } from 'react-transition-group'
+import { Link } from 'react-router-dom'
 import { HeaderWrapper , Logo, Nav, NavItem, NavSearch,Addition,Button,SearchWrapper,SearchInfo,SearchInfoTitle,SearchInfoSwitch,SearchInfoItem
          ,SearchInfoList
 } from './style'
 import {actionCreaters} from './store';
-import { List } from 'immutable';
 class Header extends Component{
     render (){
         let { focus, SearchFocus, SearchBlur ,handdleMouseIn ,handdleMouseOut,List,page,mouseIn,handdleChangePage,totalPage} =this.props;
@@ -36,7 +36,7 @@ class Header extends Component{
         }
         return (
             <HeaderWrapper>
-                <Logo href='/' />
+                <Link to="/"><Logo/></Link>
                 <Nav>
                     <NavItem className="left active">首页</NavItem>
                     <NavItem className="left">下载App</NavItem>

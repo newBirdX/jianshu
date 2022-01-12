@@ -88,6 +88,7 @@ export const RecomendWrapper=styled.div`
   margin:30px 0;
   width:280px;
 `
+//四个跳转（日更，会员，连载，版权）
 export const RecomendItem=styled.a`
   width:280px;
   height:50px;
@@ -110,6 +111,7 @@ export const RecomendItem=styled.a`
     background-size:contain;
   }
 `
+//写留言
 export const WritterWrapper=styled.div`
   width:278px;
   height:300px;
@@ -118,6 +120,7 @@ export const WritterWrapper=styled.div`
   border-radius:3px;
   text-align:center;
 `
+//阅读更多按钮
 export const LoadMore=styled.div`
   width:100%;
   height:40px;
@@ -128,4 +131,18 @@ export const LoadMore=styled.div`
   color:#fff;
   margin:30px 0;
   cursor:pointer;
+`
+export const BackTop=styled.div`
+  position:fixed;
+  bottom:100px;
+  right:100px;
+  width:60px;
+  height:60px;
+  line-height:60px;
+  text-align:center;
+  border:1px solid #ccc;
+  font-size:14px;
+  .hidd{
+    display:none;
+  }
 `

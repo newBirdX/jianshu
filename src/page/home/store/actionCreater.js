@@ -35,3 +35,10 @@ const morelist=(result,nextPage)=>{
         nextPage
     }
 }
+//修改回到顶部状态
+export const changeScrollTopShow=(flag)=>{
+    return {
+        type:constance.changeShowScroll,
+        flag
+    }
+}
