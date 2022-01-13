@@ -9,7 +9,7 @@ import { HeaderWrapper , Logo, Nav, NavItem, NavSearch,Addition,Button,SearchWra
 import {actionCreaters} from './store';
 class Header extends Component{
     render (){
-        let { focus, SearchFocus, SearchBlur ,handdleMouseIn ,handdleMouseOut,List,page,mouseIn,handdleChangePage,totalPage} =this.props;
+        let { focus, SearchFocus, SearchBlur ,handdleMouseIn ,handdleMouseOut,List,page,mouseIn,handdleChangePage,totalPage,login} =this.props;
         let jsList=List.toJS();
         let pageList=[];
         const showInfo=()=>{
@@ -40,7 +40,9 @@ class Header extends Component{
                 <Nav>
                     <NavItem className="left active">首页</NavItem>
                     <NavItem className="left">下载App</NavItem>
-                    <NavItem className="right">登录</NavItem>
+                    {
+                        login ? <NavItem className="right">退出</NavItem> : <Link to="/login"><NavItem className="right">登陆</NavItem> </Link>
+                    }
                     <NavItem className="right">
                         <span className="iconfont">&#xe636;</span>
                     </NavItem>
@@ -64,38 +66,14 @@ class Header extends Component{
             )
     }
 }
-// const Header = (props) => {
-    
-    
-    
-// }
-// class Header  extends Component {
-    // 搜索框获得焦点
-    // SearchFocus=()=>{
-    //     this.setState({
-    //         focus:true
-    //     })
-    // }
-     // 搜索框失去焦点
-    //  SearchBlur=()=>{
-    //     this.setState({
-    //         focus:false
-    //     })
-    // }
-    // render() {
-       
-    //     return (
-            
-    //     )
-    // }
-// }
 const mapStateToProps=(state,ownProps)=>{
     return {
         focus:state.get("header").get("focus"),
         List:state.get("header").get("List"),
         page:state.get("header").get("page"),
         mouseIn:state.get("header").get("mouseIn"),
-        totalPage:state.get("header").get("totalPage")
+        totalPage:state.get("header").get("totalPage"),
+        login:state.get("login").get("login")
     }
 }
 const mapDispatchToProps=(dispatch)=>{

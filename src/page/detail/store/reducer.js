@@ -1,7 +1,18 @@
 import { fromJS } from "immutable";
-import * as constances from './constance'
-
+import {constances} from './index'
 const defaultState=fromJS({
-    title:"衡水中学被外地人占领，成为高考工厂", //文章标题
-    content:'<img src={Img1} alt="" /><p><b>有些女性朋友误以为</b>，找个条件好的男人结了婚生了孩子，从此就能无忧无虑地过上好日子，好像婚姻能使一个人脱胎换骨，摆脱人世间的一切烦恼。</p><p>有些女性朋友误以为，找个条件好的男人结了婚生了孩子，从此就能无忧无虑地过上好日子，好像婚姻能使一个人脱胎换骨，摆脱人世间的一切烦恼。</p><p>有些女性朋友误以为，找个条件好的男人结了婚生了孩子，从此就能无忧无虑地过上好日子，好像婚姻能使一个人脱胎换骨，摆脱人世间的一切烦恼。</p><p>有些女性朋友误以为，找个条件好的男人结了婚生了孩子，从此就能无忧无虑地过上好日子，好像婚姻能使一个人脱胎换骨，摆脱人世间的一切烦恼。</p>'
+    title:"", //文章标题
+    content:""  //文章内容
 })
+
+export default (state =defaultState, action) => {
+    switch (action.type) {
+        case constances.changeDetail:
+            return state.merge({
+                title:action.title,
+                content:action.content
+            })
+        default:
+            return state
+    }
+}

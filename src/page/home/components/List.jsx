@@ -11,7 +11,7 @@ class List extends Component {
             {
                 list.map((value,index)=>{
                     return(
-                        <Link to="/detail" key={index}>
+                        <Link to={"/detail/"+value.get("id")} key={index}>
                         <ListItem >
                             <img src={value.get("imgUrl")} alt="" className='pic'/>
                             <ListInfo>
