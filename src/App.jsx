@@ -6,8 +6,9 @@ import { Iconf } from './statics/iconfont/iconfont.js';
 import { GlobalStyle} from './style.js';
 import store from './store/index'
 import Home from './page/home/index'
-import Detail from './page/detail/index'
+import Detail from './page/detail/loadable'
 import Login from './page/login/index';
+import Write from './page/write/index'
 export default class App extends PureComponent  {
   render() {
     return (
@@ -19,6 +20,7 @@ export default class App extends PureComponent  {
               <Route path="/" component={Home}  exact />
               <Route path="/detail/:id"  component={Detail}/>
               <Route path="/login"  component={Login}/>
+              <Route path="/write"  component={Write}/>
               </div>
             </Router>
         </Provider>

@@ -7,9 +7,10 @@ import { HeaderWrapper , Logo, Nav, NavItem, NavSearch,Addition,Button,SearchWra
          ,SearchInfoList
 } from './style'
 import {actionCreaters} from './store';
+import {actionCreaters as loginActionCreaters} from '../../page/login/store'
 class Header extends Component{
     render (){
-        let { focus, SearchFocus, SearchBlur ,handdleMouseIn ,handdleMouseOut,List,page,mouseIn,handdleChangePage,totalPage,login} =this.props;
+        let { focus, SearchFocus, SearchBlur ,handdleMouseIn ,handdleMouseOut,List,page,mouseIn,handdleChangePage,totalPage,login,logout} =this.props;
         let jsList=List.toJS();
         let pageList=[];
         const showInfo=()=>{
@@ -41,7 +42,7 @@ class Header extends Component{
                     <NavItem className="left active">首页</NavItem>
                     <NavItem className="left">下载App</NavItem>
                     {
-                        login ? <NavItem className="right">退出</NavItem> : <Link to="/login"><NavItem className="right">登陆</NavItem> </Link>
+                        login ? <NavItem className="right" onClick={logout}>退出</NavItem> : <Link to="/login"><NavItem className="right">登陆</NavItem> </Link>
                     }
                     <NavItem className="right">
                         <span className="iconfont">&#xe636;</span>
@@ -56,10 +57,12 @@ class Header extends Component{
                     </SearchWrapper>
                 </Nav>
                 <Addition>
+                    <Link to="/write">
                     <Button className='writting'>
                         <span className="iconfont">&#xe600;</span>
                         写文章
                     </Button>
+                    </Link>
                     <Button className="reg">注册</Button>
                 </Addition>
             </HeaderWrapper>
@@ -107,6 +110,9 @@ const mapDispatchToProps=(dispatch)=>{
             }
            
         },
+        logout(){
+            dispatch(loginActionCreaters.logout());
+        }
 
     }
 }

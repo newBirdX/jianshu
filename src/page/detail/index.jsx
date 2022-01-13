@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { withRouter } from 'react-router-dom'
 import { Content, DetailWrapper, Header }from './style'
 import {actionCreaters} from './store'
-import { Link } from 'react-router-dom';
 class Detail extends Component {
     render() {
         let {title,content}=this.props;
@@ -15,7 +15,6 @@ class Detail extends Component {
     }
     componentDidMount(){
         let {getDetail}=this.props;
-        console.log("didmount",this.props);
         getDetail(this.props.match.params.id);
     }
 }
@@ -33,4 +32,4 @@ const mapDispatchToProps=(dispatch)=>{
         }
     }
 }
-export default connect( mapStateToProps ,mapDispatchToProps )(Detail)
+export default connect( mapStateToProps ,mapDispatchToProps )(withRouter(Detail))
